@@ -231,6 +231,18 @@ data Tree₃ : Set where
   leaf : Tree₃
   node : Tree₃ → Tree₃ → Tree₃ → Tree₃
 
+-- Or maybe this:
+data TreeF : Set
+data ListTreeF : Set
+
+data ListTreeF where
+  nil : ListTreeF
+  _∷_ : TreeF → ListTreeF → ListTreeF
+
+data TreeF where
+  leaf : TreeF
+  node : ListTreeF → TreeF
+
 
 
 -- ## Mutual definitions
